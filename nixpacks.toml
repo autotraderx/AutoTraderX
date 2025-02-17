@@ -2,9 +2,16 @@
 nixPkgs = ["python311", "gcc"]
 
 [phases.install]
-cmds = ["pip install --upgrade pip", "pip install -r requirements.txt"]
+cmds = [
+    "python3 -m venv venv",
+    ". venv/bin/activate",
+    "pip install --upgrade pip",
+    "pip install -r requirements.txt"
+]
 
 [phases.start]
-cmds = ["pip list", "python3 bot.py"]
-
-
+cmds = [
+    ". venv/bin/activate",
+    "pip list",
+    "python3 bot.py"
+]

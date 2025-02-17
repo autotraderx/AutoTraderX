@@ -5,4 +5,4 @@ nixPkgs = ["python311", "gcc"]
 cmds = ["pip install -r requirements.txt"]
 
 [phases.start]
-cmds = ["python bot.py"]
+cmds = ["python3 bot.py"]
